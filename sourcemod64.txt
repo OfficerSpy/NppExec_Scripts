@@ -1,0 +1,4 @@
+NPP_SAVE
+cd "$(CURRENT_DIRECTORY)"
+spcomp64.exe "$(FILE_NAME)"
+cmd /q /c move "$(CURRENT_DIRECTORY)\$(NAME_PART).smx" "$(CURRENT_DIRECTORY)\..\plugins\$(NAME_PART).smx"

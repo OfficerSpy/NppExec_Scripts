@@ -1,0 +1,12 @@
+cd $(CURRENT_DIRECTORY)/assets
+cmd /c cd $(CURRENT_DIRECTORY)/assets
+cmd /c echo "Resources">$(FULL_CURRENT_PATH)
+cmd /c echo {>>$(FULL_CURRENT_PATH)
+cmd /c dir /b >>$(FULL_CURRENT_PATH)
+cmd /c echo }>>$(FULL_CURRENT_PATH)
+cmd /c exit
+NPP_OPEN $(FULL_CURRENT_PATH)
+sci_replace 0x00000001|0x00200000|0x10000000 "leaderboard_" "	"materials/hud/leaderboard_"
+sci_replace 0x00000001|0x00200000|0x10000000 ".vmt" ".vmt"	"file""
+sci_replace 0x00000001|0x00200000|0x10000000 ".vtf" ".vtf"	"file""
+NPP_SAVE
